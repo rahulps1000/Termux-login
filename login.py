@@ -5,6 +5,28 @@ import hashlib
 import sys
 import os
 
+text1 = """"
+dP                          oo          
+88                                      
+88        .d8888b. .d8888b. dP 88d888b. 
+88        88'  `88 88'  `88 88 88'  `88 
+88        88.  .88 88.  .88 88 88    88 
+88888888P `88888P' `8888P88 dP dP    dP 
+                        .88             
+                    d8888P              
+
+
+"""
+
+text2 = """
+ ___  _   _  _    ___  __  
+| __|/ \ | || |  | __||  \ 
+| _|| o || || |_ | _| | o )
+|_| |_n_||_||___||___||__/ 
+"""
+
+print(f"\u001b[34m{text1}\u001b[0m")
+
 password = getpass.getpass()
 
 filepass = open("/data/data/com.termux/files/usr/share/login/.pass", "r")
@@ -14,7 +36,9 @@ password = password.encode()
 password = hashlib.sha1(password).hexdigest()
 
 if password != filepass:
+    print(f"\u001b[34m{text1}\u001b[0m")
     print("Invalid password")
+    input()
     os.system("exit")
 else:
     prefix = "/data/data/com.termux/files/usr"
