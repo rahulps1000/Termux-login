@@ -48,7 +48,7 @@ if password != filepass:
     input()
     os.system("exit")
 else:
-    print(f"\u001b[32m{failedtext}\u001b[0m")
+    print(f"\u001b[32m{successtext}\u001b[0m")
     input()
     prefix = "/data/data/com.termux/files/usr"
     home = "/data/data/com.termux/files/home"
