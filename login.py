@@ -5,7 +5,7 @@ import hashlib
 import sys
 import os
 
-text1 = """
+headtext = """
 dP                          oo          
 88                                      
 88        .d8888b. .d8888b. dP 88d888b. 
@@ -18,14 +18,21 @@ dP                          oo
 
 """
 
-text2 = """
+successtext = """
+ __  _ _  __ __  ___  __  __ 
+/ _|| | |/ _/ _|| __|/ _|/ _|
+\_ \| U ( (( (_ | _| \_ \\_ \
+|__/|___|\__\__||___||__/|__/
+"""
+
+failedtext = """
  ___  _   _  _    ___  __  
 | __|/ \ | || |  | __||  \ 
 | _|| o || || |_ | _| | o )
 |_| |_n_||_||___||___||__/ 
 """
 
-print(f"\u001b[34m{text1}\u001b[0m")
+print(f"\u001b[34m{headtext}\u001b[0m")
 
 password = getpass.getpass()
 
@@ -36,11 +43,13 @@ password = password.encode()
 password = hashlib.sha1(password).hexdigest()
 
 if password != filepass:
-    print(f"\u001b[31m{text2}\u001b[0m")
+    print(f"\u001b[31m{failedtext}\u001b[0m")
     print("Invalid password")
     input()
     os.system("exit")
 else:
+    print(f"\u001b[32m{failedtext}\u001b[0m")
+    input()
     prefix = "/data/data/com.termux/files/usr"
     home = "/data/data/com.termux/files/home"
     motd = False
