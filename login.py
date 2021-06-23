@@ -36,7 +36,6 @@ password = password.encode()
 password = hashlib.sha1(password).hexdigest()
 
 if password != filepass:
-    os.system("clear")
     print(f"\u001b[31m{text2}\u001b[0m")
     print("Invalid password")
     input()
