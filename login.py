@@ -5,7 +5,7 @@ import hashlib
 import sys
 import os
 
-text1 = """"
+text1 = """
 dP                          oo          
 88                                      
 88        .d8888b. .d8888b. dP 88d888b. 
@@ -36,7 +36,8 @@ password = password.encode()
 password = hashlib.sha1(password).hexdigest()
 
 if password != filepass:
-    print(f"\u001b[34m{text1}\u001b[0m")
+    os.system("clear")
+    print(f"\u001b[31m{text2}\u001b[0m")
     print("Invalid password")
     input()
     os.system("exit")
